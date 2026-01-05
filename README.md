@@ -1,3 +1,6 @@
+Modified and deployed in http://ssb.vip-tusa.ru/
+
+
 # Easy Secure Scuttlebutt Pub
 
 > `easy-ssb-pub` is an easy-to-host server that runs an SSB "Pub".
