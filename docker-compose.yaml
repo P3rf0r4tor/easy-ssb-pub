@@ -6,6 +6,8 @@ services:
     environment:
       HOST: "${HOST}"
       DEBUG: "${DEBUG}"
+    ports:
+      - "8008:8008"
     volumes:
       - $HOME/.ssb:/root/.ssb
     container_name: easy-ssb-pub
@@ -19,7 +21,6 @@ services:
     ports:
       - "80:80"
       - "8007:8007"
-      - "8008:8008"
     volumes:
       - ../nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     restart: unless-stopped
