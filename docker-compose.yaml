@@ -1,4 +1,5 @@
 version: '2'
+
 services:
   easy_ssb_pub:
     build: .
@@ -10,19 +11,21 @@ services:
     container_name: easy-ssb-pub
     mem_limit: 450M
     restart: unless-stopped
+    networks:
+      - internal
 
   nginx:
-      image: nginx:alpine
-      ports:
-        - "80:80"
-        - "8007:8007"
-        - "8008:8008"  
-      volumes:
-        - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      restart: unless-stopped
-      networks:
-        - internal
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "8007:8007"
+      - "8008:8008"
+    volumes:
+      - ../nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    restart: unless-stopped
+    networks:
+      - internal
 
-  networks:
-    internal:
-      driver: bridge
+networks:
+  internal:
+    driver: bridge
