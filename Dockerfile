@@ -8,14 +8,12 @@ RUN echo "deb http://deb.debian.org/debian bookworm main" > /etc/apt/sources.lis
 RUN apt-get update
 RUN apt-get upgrade -y
 
-RUN apt-get install -y libleveldb-dev libsodium-dev
+RUN apt-get install -y curl libleveldb-dev libsodium-dev
 
 ENV NPM_CONFIG_LOGLEVEL info
 ENV NODE_VERSION 8.10.0
 
-RUN apt-get install curl libc6 libcurl4 zlib1g libtool autoconf
-
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.40.3/install.sh | bash
 ENV NVM_DIR $HOME/.nvm
 RUN . $HOME/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION
 

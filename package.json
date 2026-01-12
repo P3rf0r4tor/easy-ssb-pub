@@ -1,9 +1,9 @@
 {
   "name": "easy-ssb-pub",
-  "version": "5.0.0",
+  "version": "4.0.0",
   "private": true,
   "description": "Deploy a Secure Scuttlebutt Pub easily",
-  "author": "Andre Staltz(fork by P3rf0r4tor)",
+  "author": "Andre Staltz",
   "license": "AGPL-3.0",
   "main": "dist/index.js",
   "dependencies": {
