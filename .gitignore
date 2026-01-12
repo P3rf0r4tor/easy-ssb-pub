@@ -4,3 +4,5 @@
 /npm-debug.log
 /ignore
 /.DS_Store
+/nginx/nginx.conf
+.idea
